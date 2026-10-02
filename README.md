@@ -1,1 +1,160 @@
-# Form-Fillout
+<html lang="en"><head>
+<meta charset="UTF-8">
+<title>Contact Me</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        text-align: center;
+    }
+
+    /* YOUR CUSTOM TITLE STYLE */
+    h1 {
+        font-size: 48pt;
+        color: #000000;
+        text-align: center;
+        text-shadow:
+            0 0 6px #E033FF,
+            0 0 12px #E033FF,
+            0 0 24px #E033FF;
+        margin-bottom: 20px;
+        line-height: 0.8;
+        font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
+    }
+
+    form {
+        width: 450px;
+        margin: 20px auto;
+        background: #d9f7d9; /* LIGHT GREEN BOX */
+        padding: 20px;
+        border: 1px solid dimgray;
+        border-radius: 6px;
+        box-shadow: 2px 3px 6px darkgray;
+        text-align: left;
+    }
+
+    fieldset {
+        margin-bottom: 15px;
+        border: 1px solid dimgray;
+        padding: 10px;
+        background: #ffffff80;
+        border-radius: 4px;
+    }
+
+    legend {
+        font-weight: bold;
+    }
+
+    .option-block {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    label.vertical {
+        display: inline-block;
+        margin-left: 6px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+        width: 100%;
+        padding: 6px;
+        margin-top: 4px;
+        border: 1px solid #999;
+        border-radius: 4px;
+    }
+
+    textarea {
+        height: 100px;
+    }
+
+    input[type="submit"] {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: #E033FF;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14pt;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Contact Me</h1>
+
+<form>
+    <fieldset>
+        <legend>Contact Information</legend>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname">
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname">
+        <label for="email">Email:</label>
+        <input type="email" id="email">
+    </fieldset>
+    <fieldset>
+        <legend>Operating System (choose one)</legend>
+        <div class="option-block">
+            <input name="os" type="radio" id="mac">
+            <label for="mac" class="vertical">Mac OS</label>
+        </div>
+        <div class="option-block">
+            <input name="os" type="radio" id="windows">
+            <label for="windows" class="vertical">Windows</label>
+        </div>
+        <div class="option-block">
+            <input name="os" type="radio" id="unix">
+            <label for="unix" class="vertical">UNIX</label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Services Desired (check all that apply)</legend>
+        <div class="option-block">
+            <input type="checkbox" id="checkall" onclick="toggleAll(this)">
+            <label for="checkall" class="vertical">Assistant</label>
+        </div>
+        <div class="option-block">
+            <input type="checkbox" class="service" id="design">
+            <label for="design" class="vertical">Design</label>
+        </div>
+        <div class="option-block">
+            <input type="checkbox" class="service" id="uxui">
+            <label for="uxui" class="vertical">UX/UI</label>
+        </div>
+        <div class="option-block">
+            <input type="checkbox" class="service" id="consulting">
+            <label for="consulting" class="vertical">Consulting</label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Timeframe</legend>
+        <select>
+            <option>ASAP</option>
+            <option>1–2 weeks</option>
+            <option>1 month</option>
+            <option>Flexible</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <legend>Comments</legend>
+        <textarea></textarea>
+    </fieldset>
+    <input type="submit" value="Send Message">
+
+</form>
+
+<script>
+function toggleAll(source) {
+    const boxes = document.querySelectorAll('.service');
+    boxes.forEach(box => box.checked = source.checked);
+}
+</script>
+
+
+</body></html>
